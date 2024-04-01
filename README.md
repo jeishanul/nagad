@@ -1,4 +1,4 @@
-# `Bangladesh Nagad Payment System Implement In Laravel`
+# `Bangladesh Nagad Payment System Implement`
 
 Laravel Nagad payment gateway
 
