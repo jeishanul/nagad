@@ -1,4 +1,4 @@
-# nagad `Bangladesh Nagad`
+# `Bangladesh Nagad`
 Laravel Nagad payment `BD`
 
 # Installation
@@ -9,41 +9,33 @@ composer require jeishanul/nagad
 
 # Setup
 
-## 1 ) vendor publish (config)
+## 1 . vendor publish (config)
 
 ```bash
 php artisan vendor:publish --provider="Jeishanul\Nagad\NagadServiceProvider" --tag=config
 ```
 
-## 1.1 ) if you are using Laravel before version 5.4, manually register the service provider in your config/app.php file
-
-```php
-Jeishanul\Nagad\NagadServiceProvider::class
-```
-
-## 2 ) Config setup
+## 2 . Config setup
 
 * `config/nagad.php`
 
 ```php
-<?php
-
 return [
-    'sandbox_mode' => env('NAGAD_MODE', 'sandbox'),
-    'merchant_id' => env('NAGAD_MERCHANT_ID','683002007104225'),
-    'merchant_number' => env('NAGAD_MERCHANT_NUMBER','01711428036'),
-    'callback_url' => env('NAGAD_CALLBACK_URL', 'http://127.0.0.1:8000/nagad/callback'),
-    'public_key' => env('NAGAD_PUBLIC_KEY',''),
-    'private_key' => env('NAGAD_PRIVATE_KEY','')
+    'sandbox_mode' => env('NAGAD_MODE'),
+    'merchant_id' => env('NAGAD_MERCHANT_ID'),
+    'merchant_number' => env('NAGAD_MERCHANT_NUMBER'),
+    'callback_url' => env('NAGAD_CALLBACK_URL'),
+    'public_key' => env('NAGAD_PUBLIC_KEY'),
+    'private_key' => env('NAGAD_PRIVATE_KEY')
 ];
 ```
 
 # env setup
 
 ```bash
-NAGAD_MERCHANT_ID=683002007104225
-NAGAD_MERCHANT_NUMBER=01711428036
-NAGAD_CALLBACK_URL=http://127.0.0.1:8000/nagad/callback
+NAGAD_MERCHANT_ID=
+NAGAD_MERCHANT_NUMBER=
+NAGAD_CALLBACK_URL=
 NAGAD_MODE=sandbox // sandbox or live
 NAGAD_PUBLIC_KEY="" //sandbox <optional>
 NAGAD_PRIVATE_KEY=""  // sandbox <optional>
@@ -54,20 +46,14 @@ NAGAD_PRIVATE_KEY=""  // sandbox <optional>
 ## get callback url
 
 ```php
-<?php
-use NagadPayment;
 
-$redirectUrl = NagadPayment::tnxID($id)
-             ->amount($amount)
-             ->getRedirectUrl();
-return $redirectUrl;
+$redirectUrl = NagadPayment::tnxID($id)->amount($amount)->getRedirectUrl();
+return redirect($redirectUrl);
 ```
 
 ## verify payment // callback
 
 ```php
-<?php
-use NagadPayment;
 
 $verify = (object) NagadPayment::verify();
 if($verify->status === 'Success'){
@@ -76,29 +62,10 @@ if($verify->status === 'Success'){
     // your functional task with order_id
 }
 if ($verify->status === 'Aborted') {
-    dd($verify);
     // redirect or other what you want
 }
-dd($verify);
 
 ```
-
-# Note:
-
-`~Sandbox`
-
-* Need a merchant account.
-* Register a Nagad number and need sandbox balance (contact with nagad)
-
-`~ Live`
-
-* Need a merchant account (live server)
-* Contact with Nagad and provide your live server ip address.
-* provide support id ($sid) the nagad office
-
-# Live mode tips 
-
-`Sandbox works fine but when you deploy your project on server you can't get any response and don't work payment system`
 
 ## How to enable nagad gateway on server 
 
@@ -114,6 +81,3 @@ Route::get('get-support-id',function(){
     return $sid;
 })
 ```
-# Any query
-
-* shishirjeishanul@gmail.com
