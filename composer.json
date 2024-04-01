@@ -1,33 +1,33 @@
 {
-  "name": "code4mk/lara-nagad",
+  "name": "jeishanul/nagad",
   "description": "Laravel nagad payment package",
   "keywords": [
     "nagad",
     "nagad-payment",
-    "code4mk"
+    "jeishanul"
   ],
-  "homepage": "https://github.com/code4mk/lara-nagad",
+  "homepage": "https://github.com/jeishanul/nagad",
   "support": {
-    "issues": "https://github.com/code4mk/lara-nagad/issues",
-    "source": "https://github.com/code4mk/lara-nagad"
+    "issues": "https://github.com/jeishanul/nagad/issues",
+    "source": "https://github.com/jeishanul/nagad"
   },
   "license": "MIT",
   "authors": [
     {
-      "name": "code4mk",
-      "email": "hiremostafa@gmail.com",
-      "website": "https://code4mk.org"
+      "name": "Jeishanul Haque Shishir",
+      "email": "shishirjeishanul@gmail.com",
+      "website": "https://jeishanul.com"
     }
   ],
   "autoload": {
     "psr-4": {
-      "Code4mk\\Nagad\\": "src/"
+      "Jeishanul\\Nagad\\": "src/"
     }
   },
   "extra": {
     "laravel": {
         "providers": [
-            "Code4mk\\Nagad\\NagadServiceProvider"
+            "Jeishanul\\Nagad\\NagadServiceProvider"
         ]
     }
   },

@@ -1,11 +1,11 @@
 <?php
 
-namespace Code4mk\Nagad;
+namespace Jeishanul\Nagad;
 
 /**
  * Utility class
  * All functional task from nagad official sdk.
- * @author code4mk <hiremostafa@gmail.com>
+ * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
  * @version 1.0.0
  */
 

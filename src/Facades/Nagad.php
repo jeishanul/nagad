@@ -1,10 +1,10 @@
 <?php
 
-namespace Code4mk\Nagad\Facades;
+namespace Jeishanul\Nagad\Facades;
 
 /**
  * Nagad Facades
- * @author code4mk <hiremostafa@gmail.com>
+ * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
  * @version 1.0.0
  */
 

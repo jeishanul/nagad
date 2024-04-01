@@ -1,10 +1,10 @@
 <?php
 
-namespace Code4mk\Nagad;
+namespace Jeishanul\Nagad;
 
 /**
  * Service Provider class
- * @author code4mk <hiremostafa@gmail.com>
+ * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
  */
 
 use Illuminate\Support\ServiceProvider;
@@ -23,7 +23,7 @@ class NagadServiceProvider extends ServiceProvider
         __DIR__ . '/../config/nagad.php' => config_path('nagad.php'),
       ], 'config');
 
-       AliasLoader::getInstance()->alias('NagadPayment', 'Code4mk\Nagad\Facades\Nagad');
+       AliasLoader::getInstance()->alias('NagadPayment', 'Jeishanul\Nagad\Facades\Nagad');
    }
 
   /**

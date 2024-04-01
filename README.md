@@ -1,4 +1,4 @@
-<p align="center" ><img src="https://raw.githubusercontent.com/code4mk/lara-nagad/master/nagad%20payment.png"></p>
+<p align="center" ><img src="https://raw.githubusercontent.com/jeishanul/lara-nagad/master/nagad%20payment.png"></p>
 
 # lara-nagad `Bangladesh Nagad`
 Laravel Nagad payment `BD`
@@ -6,7 +6,7 @@ Laravel Nagad payment `BD`
 # Installation
 
 ```bash
-composer require code4mk/lara-nagad
+composer require jeishanul/lara-nagad
 ```
 
 # Setup
@@ -14,13 +14,13 @@ composer require code4mk/lara-nagad
 ## 1 ) vendor publish (config)
 
 ```bash
-php artisan vendor:publish --provider="Code4mk\Nagad\NagadServiceProvider" --tag=config
+php artisan vendor:publish --provider="Jeishanul\Nagad\NagadServiceProvider" --tag=config
 ```
 
 ## 1.1 ) if you are using Laravel before version 5.4, manually register the service provider in your config/app.php file
 
 ```php
-Code4mk\Nagad\NagadServiceProvider::class
+Jeishanul\Nagad\NagadServiceProvider::class
 ```
 
 ## 2 ) Config setup
@@ -116,11 +116,6 @@ Route::get('get-support-id',function(){
     return $sid;
 })
 ```
-
-# Demo
-
-* [Lara Nagad Demo](https://github.com/code4mk/lara-nagad-demo)
-
 # Any query
 
-* hiremostafa@gmail.com
+* shishirjeishanul@gmail.com

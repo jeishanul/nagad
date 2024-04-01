@@ -1,12 +1,12 @@
 <?php
 
-namespace Code4mk\Nagad;
+namespace Jeishanul\Nagad;
 
-use Code4mk\Nagad\Utility;
+use Jeishanul\Nagad\Utility;
 
 /**
  * Nagad class
- * @author code4mk <hiremostafa@gmail.com>
+ * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
  * @version 1.0.0
  */
 
@@ -14,6 +14,7 @@ class Nagad{
 
     private $tnxID;
     private $nagadHost;
+    private $amount = 10;
     private $tnxStatus = false;
     private $merchantAdditionalInfo = [];
 
@@ -31,7 +32,7 @@ class Nagad{
      * Trasaction ID.
      * @param int $id.
      * @param bool $status.
-     * @author code4mk <hiremostafa@gmail.com>
+     * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
      * @since v1.0.0
      * @version 1.0.0
      */
@@ -46,7 +47,7 @@ class Nagad{
     /**
      * Amount.
      * @param int $amount.
-     * @author code4mk <hiremostafa@gmail.com>
+     * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
      * @since v1.0.0
      * @version 1.0.0
      */
@@ -58,7 +59,7 @@ class Nagad{
 
     /**
      * Get redirect url <callback url>
-     * @author code4mk <hiremostafa@gmail.com>
+     * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
      * @since v1.0.0
      * @version 1.0.0
      */
@@ -138,7 +139,7 @@ class Nagad{
 
     /**
      * Verify Payment
-     * @author code4mk <hiremostafa@gmail.com>
+     * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
      * @since v1.0.0
      * @version 1.0.0
      */
@@ -155,7 +156,7 @@ class Nagad{
 
     /**
      * Get support id for live project <callback url>
-     * @author code4mk <hiremostafa@gmail.com>
+     * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
      * @since v1.0.0
      * @version 1.0.0
      */
@@ -164,7 +165,6 @@ class Nagad{
         $DateTime = Date('YmdHis');
         $MerchantID = config('nagad.merchant_id');
         $invoiceNo = $this->tnxStatus ? $this->tnxID : 'Inv'.Date('YmdH').rand(1000, 10000);
-        $merchantCallbackURL = config('nagad.callback_url');
 
         $SensitiveData = [
             'merchantId' => $MerchantID,
