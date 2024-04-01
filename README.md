@@ -1,4 +1,4 @@
-# `Bangladesh Nagad`
+# `Bangladesh Nagad Payment System Implement In Laravel`
 
 Laravel Nagad payment gateway
 
@@ -38,7 +38,7 @@ NAGAD_MERCHANT_ID=
 NAGAD_MERCHANT_NUMBER=
 NAGAD_CALLBACK_URL=
 NAGAD_MODE=sandbox // sandbox or live
-NAGAD_PUBLIC_KEY="" //sandbox <optional>
+NAGAD_PUBLIC_KEY="" // sandbox <optional>
 NAGAD_PRIVATE_KEY=""  // sandbox <optional>
 ```
 
