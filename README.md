@@ -1,4 +1,5 @@
 # `Bangladesh Nagad`
+
 Laravel Nagad payment `BD`
 
 # Installation
@@ -15,9 +16,9 @@ composer require jeishanul/nagad
 php artisan vendor:publish --provider="Jeishanul\Nagad\NagadServiceProvider" --tag=config
 ```
 
-## 2 . Config setup
+## 2 . env setup
 
-* `config/nagad.php`
+- `config/nagad.php`
 
 ```php
 return [
@@ -67,17 +68,12 @@ if ($verify->status === 'Aborted') {
 
 ```
 
-## How to enable nagad gateway on server 
+## How to enable nagad gateway on server
 
-* Contact with nagad, provide your ip and support ID  which you will get from temporary route `get-support-id` . Nagad will be white-listed your ip and approve your merchant. Now your nagad gateway work properly on server.
-
-~ temporary route (copy and paste)
+- Contact with nagad, provide your ip and support ID. Nagad will be white-listed your ip and approve your merchant. Now your nagad gateway work properly on server.
 
 ```php
-Route::get('get-support-id',function(){
-    $sid = NagadPayment::tnxID(1)
-                 ->amount(100)
-                 ->getSupportID();
-    return $sid;
-})
+// It's provide you a "support ID"
+$sid = NagadPayment::tnxID(1)->amount(100)->getSupportID();
+return $sid;
 ```
