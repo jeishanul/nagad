@@ -1,6 +1,6 @@
 # `Bangladesh Nagad`
 
-Laravel Nagad payment `BD`
+Laravel Nagad payment gateway
 
 # Installation
 
@@ -10,13 +10,13 @@ composer require jeishanul/nagad
 
 # Setup
 
-## 1 . vendor publish (config)
+## 1 . vendor publish
 
 ```bash
 php artisan vendor:publish --provider="Jeishanul\Nagad\NagadServiceProvider" --tag=config
 ```
 
-## 2 . env setup
+## 2 . Nagad config setup
 
 - `config/nagad.php`
 
@@ -31,7 +31,7 @@ return [
 ];
 ```
 
-# env setup
+# .env setup
 
 ```bash
 NAGAD_MERCHANT_ID=
@@ -44,7 +44,7 @@ NAGAD_PRIVATE_KEY=""  // sandbox <optional>
 
 # Usage
 
-## get callback url
+## Get callback url
 
 ```php
 
@@ -52,8 +52,7 @@ $redirectUrl = NagadPayment::tnxID($id)->amount($amount)->getRedirectUrl();
 return redirect($redirectUrl);
 ```
 
-## verify payment // callback
-
+## Verify payment
 ```php
 
 $verify = (object) NagadPayment::verify();
