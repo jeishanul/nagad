@@ -1,12 +1,10 @@
-<p align="center" ><img src="https://raw.githubusercontent.com/jeishanul/lara-nagad/master/nagad%20payment.png"></p>
-
-# lara-nagad `Bangladesh Nagad`
+# nagad `Bangladesh Nagad`
 Laravel Nagad payment `BD`
 
 # Installation
 
 ```bash
-composer require jeishanul/lara-nagad
+composer require jeishanul/nagad
 ```
 
 # Setup
