@@ -115,8 +115,8 @@ class Nagad
     {
         self::getUrl();
 
-        $Query_String = explode("&", explode("?", $_SERVER['REQUEST_URI'])[1]);
-        $payment_ref_id = substr($Query_String[2], 15);
+        $queryString = explode("&", explode("?", $_SERVER['REQUEST_URI'])[1]);
+        $payment_ref_id = substr($queryString[2], 15);
         $url = self::$nagadHost . "/verify/payment/" . $payment_ref_id;
         $json = Utility::HttpGet($url);
         $arr = json_decode($json, true);
@@ -127,7 +127,7 @@ class Nagad
      * Get support id for live project <callback url>
      * @param $tnxID integer (default = 1)
      * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
-     * @return support id
+     * @return object support id
      */
     public static function getSupportID(int $tnxID = 1)
     {

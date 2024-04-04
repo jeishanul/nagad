@@ -79,6 +79,6 @@ if ($verify->status === 'Aborted') {
 use Jeishanul\Nagad\Nagad;
 // It's provide you a "support ID"
 $tnxID = 1;
-$sid = Nagad::getSupportID();
+$sid = Nagad::getSupportID($tnxID);
 return $sid;
 ```
