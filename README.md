@@ -47,15 +47,19 @@ NAGAD_PRIVATE_KEY=""  // sandbox <optional>
 ## Get callback url
 
 ```php
+use Jeishanul\Nagad\Nagad;
 
-$redirectUrl = NagadPayment::tnxID($id)->amount($amount)->getRedirectUrl();
+$tnxID = 1;
+$amount = 99;
+$redirectUrl = Nagad::getRedirectUrl($tnxID,$amount);;
 return redirect($redirectUrl);
 ```
 
 ## Verify payment
-```php
 
-$verify = (object) NagadPayment::verify();
+```php
+use Jeishanul\Nagad\Nagad;
+$verify = Nagad::verify();
 if($verify->status === 'Success'){
     $order = json_decode($verify->additionalMerchantInfo);
     $order_id = $order->tnx_id;
@@ -72,7 +76,9 @@ if ($verify->status === 'Aborted') {
 - Contact with nagad, provide your ip and support ID. Nagad will be white-listed your ip and approve your merchant. Now your nagad gateway work properly on server.
 
 ```php
+use Jeishanul\Nagad\Nagad;
 // It's provide you a "support ID"
-$sid = NagadPayment::tnxID(1)->amount(100)->getSupportID();
+$tnxID = 1;
+$sid = Nagad::getSupportID();
 return $sid;
 ```
