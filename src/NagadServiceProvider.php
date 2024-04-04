@@ -1,14 +1,12 @@
 <?php
 
 namespace Jeishanul\Nagad;
-
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\AliasLoader;
 /**
  * Service Provider class
  * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
  */
-
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Foundation\AliasLoader;
 
 class NagadServiceProvider extends ServiceProvider
 {

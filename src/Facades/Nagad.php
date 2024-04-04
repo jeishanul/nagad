@@ -1,14 +1,13 @@
 <?php
 
 namespace Jeishanul\Nagad\Facades;
-
+use Illuminate\Support\Facades\Facade;
 /**
  * Nagad Facades
  * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
  * @version 1.0.0
  */
 
-use Illuminate\Support\Facades\Facade;
 
 class Nagad extends Facade
 {
