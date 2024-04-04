@@ -9,7 +9,8 @@ namespace Jeishanul\Nagad;
  * @version 1.0.0
  */
 
-class Utility {
+class Utility
+{
     /**
      * Generate Random string
      */
@@ -133,7 +134,6 @@ class Utility {
         $ResultArray = json_decode($resultdata, true);
         curl_close($url);
         return $ResultArray;
-
     }
 
     public static function HttpGet($url)
@@ -147,12 +147,10 @@ class Utility {
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-//        curl_setopt($url, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        //        curl_setopt($url, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
         $file_contents = curl_exec($ch);
         echo curl_error($ch);
         curl_close($ch);
         return $file_contents;
     }
-
-
 }

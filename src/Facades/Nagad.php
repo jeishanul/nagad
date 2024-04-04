@@ -1,6 +1,7 @@
 <?php
 
 namespace Jeishanul\Nagad\Facades;
+
 use Illuminate\Support\Facades\Facade;
 
 /**

@@ -26,7 +26,6 @@ class NagadServiceProvider extends ServiceProvider
         AliasLoader::getInstance()->alias('NagadPayment', 'Jeishanul\Nagad\Facades\Nagad');
     }
 
-    
     /**
      * Register any application services.
      *
