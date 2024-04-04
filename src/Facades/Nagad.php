@@ -2,6 +2,7 @@
 
 namespace Jeishanul\Nagad\Facades;
 use Illuminate\Support\Facades\Facade;
+
 /**
  * Nagad Facades
  * @author Jeishanul Haque Shishir <shishirjeishanul@gmail.com>
@@ -18,6 +19,6 @@ class Nagad extends Facade
    */
   protected static function getFacadeAccessor()
   {
-      return 'nagad';
+    return 'nagad';
   }
 }
