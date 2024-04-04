@@ -68,7 +68,7 @@ class Nagad{
         $DateTime = Date('YmdHis');
         $MerchantID = config('nagad.merchant_id');
         $invoiceNo = $this->tnxStatus ? $this->tnxID : 'Inv'.Date('YmdH').rand(1000, 10000);
-        $merchantCallbackURL = config('nagad.callback_url');
+        $merchantCallbackURL = url(config('nagad.callback_url'));
 
         $SensitiveData = [
             'merchantId' => $MerchantID,
